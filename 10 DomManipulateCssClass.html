@@ -1,0 +1,27 @@
+<!-- a. Create a webpage with a button and a paragraph element.
+    
+b. Implement a JavaScript function that adds a CSS class named "highlight" to the paragraph element when the button is clicked. The "highlight" class should change the background color of the paragraph to yellow. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Webpage with button and paragraph</title>
+    <style>
+      .highlight {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Webpage with button and paragraph</h1>
+    <p id="paragraph">This is a paragraph.</p>
+    <button onclick="addHighlightClass()">Highlight Paragraph</button>
+
+    <script>
+      function addHighlightClass() {
+        const paragraph = document.getElementById("paragraph");
+        paragraph.classList.add("highlight");
+      }
+    </script>
+  </body>
+</html>

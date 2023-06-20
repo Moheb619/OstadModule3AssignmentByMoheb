@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dom Change Attribute Value</title>
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+      #image {
+        width: 300px;
+        height: 300px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dom Change Attribute Value</h1>
+    <script>
+      function changeImage() {
+        var image = document.getElementById("image");
+        if (
+          image.src ===
+          "https://scontent.fdac13-1.fna.fbcdn.net/v/t39.30808-6/279423227_691738405415652_2159735100647876604_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=pkzmBcRgi3gAX9p-Iho&_nc_ht=scontent.fdac13-1.fna&oh=00_AfC8WVCLsQWCzHe-M0oNLConVVqiSNRFJFkoi3nqzQXHgQ&oe=64973AEA"
+        ) {
+          image.src =
+            "https://scontent.fdac13-1.fna.fbcdn.net/v/t39.30808-6/250927045_584618909460936_8343118359262621117_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=174925&_nc_ohc=osupOuguyVMAX9oKf_n&_nc_ht=scontent.fdac13-1.fna&oh=00_AfBhfI-u7WBuD1jlZHdGyn8drJB9mNSCLP1LslpfoDI7Uw&oe=649582C7";
+        } else {
+          image.src =
+            "https://scontent.fdac13-1.fna.fbcdn.net/v/t39.30808-6/279423227_691738405415652_2159735100647876604_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=pkzmBcRgi3gAX9p-Iho&_nc_ht=scontent.fdac13-1.fna&oh=00_AfC8WVCLsQWCzHe-M0oNLConVVqiSNRFJFkoi3nqzQXHgQ&oe=64973AEA";
+        }
+      }
+    </script>
+
+    <img
+      id="image"
+      src="https://scontent.fdac13-1.fna.fbcdn.net/v/t39.30808-6/279423227_691738405415652_2159735100647876604_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=pkzmBcRgi3gAX9p-Iho&_nc_ht=scontent.fdac13-1.fna&oh=00_AfC8WVCLsQWCzHe-M0oNLConVVqiSNRFJFkoi3nqzQXHgQ&oe=64973AEA"
+      alt="Image"
+    />
+    <button onclick="changeImage()">Click to change the image</button>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+<!-- Implement a webpage with a form that has the following fields:
+
+a. Name (text input)
+b. Email (email input)
+c. Password (password input)
+d. Confirm Password (password input)
+e. Submit (button)
+
+
+Implement JavaScript validation for the form fields:
+
+f. Name should not be empty and should contain only letters.
+g. Email should be a valid email address.
+h. Password should have a minimum length of 8 characters and contain at least one uppercase letter, one lowercase letter, and one digit.
+i. Confirm Password should match the Password field.
+j. Display appropriate error messages for invalid fields. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Webpage with form validation</title>
+  </head>
+  <body>
+    <h1>Webpage with form validation</h1>
+    <form onsubmit="validateForm()">
+      <input type="text" id="name" placeholder="Name" />
+      <input type="email" id="email" placeholder="Email" />
+      <input type="password" id="password" placeholder="Password" />
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      function validateName(name) {
+        if (!name) {
+          return "Name is required.";
+        }
+        if (!/^[a-zA-Z]+$/.test(name)) {
+          return "Name should only contain letters.";
+        }
+        return "";
+      }
+      function validateEmail(email) {
+        if (!email) {
+          return "Email is required.";
+        }
+        if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z]+$/.test(email)) {
+          return "Invalid email address.";
+        }
+        return "";
+      }
+      function validatePassword(password) {
+        if (!password) {
+          return "Password is required.";
+        }
+        if (password.length < 8) {
+          return "Password must be at least 8 characters long.";
+        }
+        if (!/[A-Z]/.test(password)) {
+          return "Password must contain at least one uppercase letter.";
+        }
+        if (!/[a-z]/.test(password)) {
+          return "Password must contain at least one lowercase letter.";
+        }
+        if (!/[0-9]/.test(password)) {
+          return "Password must contain at least one digit.";
+        }
+        return "";
+      }
+      function validateConfirmPassword(password, confirmPassword) {
+        if (!confirmPassword) {
+          return "Confirm password is required.";
+        }
+        if (password !== confirmPassword) {
+          return "Passwords do not match.";
+        }
+        return "";
+      }
+      function validateForm() {
+        event.preventDefault();
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirmPassword").value;
+
+        const errors = [];
+        errors.push(validateName(name));
+        errors.push(validateEmail(email));
+        errors.push(validatePassword(password));
+        errors.push(validateConfirmPassword(password, confirmPassword));
+
+        let errorString = "";
+        for (let i = 0; i < errors.length; i++) {
+          if (errors[i]) {
+            errorString += errors[i] + "\n";
+          }
+        }
+
+        if (errorString != "") {
+          alert(errorString);
+        } else {
+          alert("Form submitted successfully!");
+        }
+      }
+    </script>
+  </body>
+</html>

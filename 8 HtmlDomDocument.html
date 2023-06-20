@@ -1,0 +1,21 @@
+<!-- a. Create a webpage with a button and a paragraph element.
+
+b. Implement a JavaScript function that changes the text content of the paragraph element to "Button Clicked!" when the button is clicked. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Webpage with button and paragraph</title>
+    <script>
+      function changeText() {
+        const paragraph = document.getElementById("paragraph");
+        paragraph.textContent = "Button Clicked!";
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Webpage with button and paragraph</h1>
+    <p id="paragraph">Click the button to change the text content of the paragraph.</p>
+    <button onclick="changeText()">Click Me!</button>
+  </body>
+</html>
